@@ -1,0 +1,199 @@
+/* Ime Prezime Indeks */
+
+body
+{
+    background-color: #00496c;
+}
+#main{
+    margin: auto;
+    width: 770px;
+    /*background-image: url("img/cover_bot.png");*/
+
+
+}
+.container{
+    background-image: url("img/cover_top.png"), url("./img/cover.png"), url("img/cover_bot.png");
+    background-repeat: no-repeat, repeat, repeat;
+    /*background-position: 0 0, 0 0, 0 0;*/
+    background-position: top,center,0 0;
+    height: 1817px;
+    backface-visibility: visible;
+    position: relative;
+
+    color: grey;
+    font-family: serif;
+    font-style: italic;
+}
+
+.top
+{     float: left;
+    padding: 45px 40px 40px 50px;
+    /*background-repeat: no-repeat;*/
+
+}
+
+.top h1,h2,h3{
+    display: none;
+}
+header{
+    background-image: url("./img/game-of-thrones.jpg"), url("./img/ice-and-fire.jpg"),url("./img/introduction.png"),url("./img/img_1.jpg");
+    width: 350px;
+    height: 490px;
+   background-position:center top,center 20%,80% 50%,-90% bottom;
+    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
+    /*position: absolute;*/
+    float: left;
+}
+.about{
+
+
+    display: inline-block;
+    text-align: right;
+    width: 310px;
+    padding-left: 30px;
+}
+.about h3{
+    display: none;
+}
+.introduction h3{
+    display: none;
+}
+
+.summary{
+                       /*1 ndjatht encicopledy*/
+    width: 310px;
+   float: right;
+}
+.summary p:nth-child(2){
+    margin-top: -190px;
+    margin-right: -5px;
+   padding-top: 20px;
+    padding-left: 5px;
+    width: 81px;
+    height: 131px;
+    float: right;
+    font-size: 11px;
+
+    background: url("./img/bookmark.jpg");
+    background-repeat: no-repeat;
+    color: white;
+
+
+
+}
+.summary a{
+    color: white;
+
+}
+.summary p:nth-child(1){
+    width: 200px;
+}
+.main{
+
+}
+.people p:first-child(n){
+    padding-top: 200px;
+
+}
+.introduction p:last-child{
+
+}
+.people{
+    background-image: url("./img/img_2.jpg"),url("./img/about.png");
+    background-repeat: no-repeat;
+    background-position: center 30%,center top;
+    display: inline-block;
+padding: 40px 50px 0px 20px;
+    width: 310px;
+    height:300px;
+    float: right;
+}
+.people2{
+    display: inline-block;
+    padding: 0px 50px 0px 20px;
+    width: 310px;
+    float: right;
+    height: 300px;
+
+}
+footer{
+    position: absolute;
+    bottom: 211px;
+    right: 75px;
+
+
+}
+footer a{
+    padding-right: 40px;
+    text-decoration: none;
+    color: grey;
+    font-family: serif;
+    font-style: unset;
+}
+.main{
+  /*height: 100px;*/
+}
+.sidebar{
+    display: inline-block;
+    background-image: url("./img/people.png"),url("./img/img_3.jpg"),url("./img/most-visited.png");
+    background-repeat: no-repeat;
+    background-position: right 9%,600% 30%,50% 70%;
+
+    width: 300px;
+    height: 445px;
+    padding-left: 40px;
+    float: left;
+
+}
+.wrapper{
+    margin-top: 200px;
+    list-style: none;
+}
+
+.navigation li{
+    /*margin-top: 40px;*/
+    list-style: url("./img/bull.png");
+    text-decoration: none;
+}
+.backstage-links{
+    margin-top: 10px;
+    padding-top: 30px;
+    width: 252px;
+    height: 349px;
+         display: inline-block;
+  background-image: url("./img/backstage.png"),url("./img/notes.jpg");
+    background-position: 7% 4%,center -7%;
+    background-repeat: no-repeat,no-repeat;
+    backface-visibility: visible;
+
+
+
+}
+.navigation{
+    display: inline-block;
+    width: 330px;
+    height: 300px;
+
+}
+
+.navigation ul{
+    margin-top: 100px;
+}
+.sidebar ul{
+    padding-top: 50px;
+    padding-left: 70px;
+    text-decoration: none;
+
+}
+.people p{
+    margin-top: 200px;
+}
+.people p:last-child{
+margin-top: -5px;
+}
+.people p:last-child{
+    margin-top: 407px;
+}
+ footer,#div-backstage-links,.wrapper a{
+     text-decoration: none;
+ }
