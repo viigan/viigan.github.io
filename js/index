@@ -1,0 +1,110 @@
+// Language toggle (IT/EN) for Installazioni Generali
+(function(){
+  const translations = {
+    it: {
+      nav_about: 'Chi Siamo', nav_services: 'Servizi', nav_projects: 'Progetti', nav_contact: 'Contatti', nav_quote:'Richiedi Preventivo',
+      hero_badge: 'Affidabilità • Sicurezza • Innovazione',
+      hero_title: 'Impianti industriali per operatività quotidiana',
+      hero_lead: 'Progettiamo, forniamo e installiamo impianti professionali per oil & gas, acqua, automazione e infrastrutture produttive. Interventi rapidi e standard di sicurezza elevati.',
+      about_eyebrow: 'Chi siamo',
+      about_title: 'Soluzioni complete per impianti industriali',
+      about_desc: 'Dalla progettazione all’installazione e manutenzione, garantiamo continuità operativa e conformità alle normative. Lavoriamo con ristoranti, hotel, panifici e siti produttivi complessi.',
+      services_eyebrow: 'Servizi', services_title: 'Competenze principali',
+      s1_t:'Impianti elettrici', s1_d:'Quadri, cablaggi, distribuzione di potenza e illuminazione industriale ad alta efficienza.',
+      s2_t:'Oil & Gas', s2_d:'Linee, valvole, sicurezza ATEX, monitoraggio e manutenzione per ambienti critici.',
+      s3_t:'Acqua & idraulica', s3_d:'Pompe, trattamento acque, reti e sistemi antincendio con certificazioni.',
+      s4_t:'Automazione', s4_d:'PLC/SCADA, sensori, integrazione IoT per controllo e continuità produttiva.',
+      s5_t:'Sicurezza', s5_d:'Rilevazione incendi, videosorveglianza, accessi e adeguamento normativo.',
+      s6_t:'Service & manutenzione', s6_d:'Piani programmati, interventi rapidi e reportistica di conformità.',
+      projects_eyebrow:'Progetti', projects_title:'Selezione lavori recenti', projects_badge:'Slider immagini',
+      contact_eyebrow:'Contatti', contact_title:'Richiedi un sopralluogo',
+      form_name:'Nome e cognome', form_email:'Email', form_phone:'Telefono (opzionale)', form_msg:'Descrivi il tuo progetto', form_send:'Invia richiesta', form_note:'* Il form è dimostrativo. Puoi collegarlo a Email/Telegram/CRM.'
+    },
+    en: {
+      nav_about: 'About', nav_services: 'Services', nav_projects: 'Projects', nav_contact: 'Contact', nav_quote:'Request a Quote',
+      hero_badge: 'Reliability • Safety • Innovation',
+      hero_title: 'Industrial systems for daily operations',
+      hero_lead: 'We design, supply and install professional systems for oil & gas, water, automation and production infrastructure. Fast response, high safety standards.',
+      about_eyebrow: 'About us',
+      about_title: 'End‑to‑end solutions for industrial plants',
+      about_desc: 'From design to installation and maintenance, we ensure uptime and regulatory compliance. We work with restaurants, hotels, bakeries and complex production sites.',
+      services_eyebrow: 'Services', services_title: 'Core competencies',
+      s1_t:'Electrical systems', s1_d:'Panels, wiring, power distribution and high‑efficiency industrial lighting.',
+      s2_t:'Oil & Gas', s2_d:'Pipelines, valves, ATEX safety, monitoring and maintenance for critical areas.',
+      s3_t:'Water & hydraulics', s3_d:'Pumps, water treatment, networks and certified fire protection systems.',
+      s4_t:'Automation', s4_d:'PLC/SCADA, sensors, IoT integration for control and production continuity.',
+      s5_t:'Safety', s5_d:'Fire detection, video surveillance, access control and compliance.',
+      s6_t:'Service & maintenance', s6_d:'Planned service, quick interventions and compliance reporting.',
+      projects_eyebrow:'Projects', projects_title:'Recent work selection', projects_badge:'Image slider',
+      contact_eyebrow:'Contact', contact_title:'Request a site visit',
+      form_name:'Full name', form_email:'Email', form_phone:'Phone (optional)', form_msg:'Describe your project', form_send:'Send request', form_note:'* Demo form. Connect to Email/Telegram/CRM.'
+    }
+  };
+
+  function sel(q){ return document.querySelector(q); }
+  function setLang(lang){
+    const t = translations[lang]; if(!t) return; document.documentElement.lang = lang;
+    // Nav
+    const a1=sel('a[href="#about"]'); if(a1) a1.textContent=t.nav_about;
+    const a2=sel('a[href="#services"]'); if(a2) a2.textContent=t.nav_services;
+    const a3=sel('a[href="#projects"]'); if(a3) a3.textContent=t.nav_projects;
+    const a4=sel('a[href="#contact"]'); if(a4) a4.textContent=t.nav_contact;
+    const q=sel('nav .button[href="#contact"]'); if(q) q.textContent=t.nav_quote;
+    // Hero
+    const h=sel('.hero .content'); if(h){
+      const b=h.querySelector('.badge'); if(b) b.textContent=t.hero_badge;
+      const h1=h.querySelector('h1'); if(h1) h1.textContent=t.hero_title;
+      const p=h.querySelector('p.lead'); if(p) p.textContent=t.hero_lead;
+    }
+    // About
+    const about=sel('#about'); if(about){
+      const e=about.querySelector('.eyebrow'); if(e) e.textContent=t.about_eyebrow;
+      const h2=about.querySelector('h2'); if(h2) h2.textContent=t.about_title;
+      const d=about.querySelector('.head p'); if(d) d.textContent=t.about_desc;
+    }
+    // Services
+    const s=sel('#services'); if(s){
+      const e=s.querySelector('.eyebrow'); if(e) e.textContent=t.services_eyebrow;
+      const h2=s.querySelector('h2'); if(h2) h2.textContent=t.services_title;
+      const cards=s.querySelectorAll('.card');
+      const titles=[t.s1_t,t.s2_t,t.s3_t,t.s4_t,t.s5_t,t.s6_t];
+      const desc=[t.s1_d,t.s2_d,t.s3_d,t.s4_d,t.s5_d,t.s6_d];
+      cards.forEach((c,i)=>{ const h3=c.querySelector('h3'); const p=c.querySelector('p'); if(h3) h3.textContent=titles[i]; if(p) p.textContent=desc[i]; });
+    }
+    // Projects
+    const pr=sel('#projects'); if(pr){
+      const e=pr.querySelector('.eyebrow'); if(e) e.textContent=t.projects_eyebrow;
+      const h2=pr.querySelector('h2'); if(h2) h2.textContent=t.projects_title;
+      const b=pr.querySelector('.badge'); if(b) b.textContent=t.projects_badge;
+    }
+    // Contact
+    const c=sel('#contact'); if(c){
+      const e=c.querySelector('.eyebrow'); if(e) e.textContent=t.contact_eyebrow;
+      const h2=c.querySelector('h2'); if(h2) h2.textContent=t.contact_title;
+      const f=c.querySelector('form'); if(f){
+        const [name,email,phone] = f.querySelectorAll('input');
+        const ta=f.querySelector('textarea'); const btn=f.querySelector('button[type="submit"]');
+        if(name) name.placeholder=t.form_name; if(email) email.placeholder=t.form_email; if(phone) phone.placeholder=t.form_phone; if(ta) ta.placeholder=t.form_msg; if(btn) btn.textContent=t.form_send;
+      }
+      const hint=sel('#contactForm + p'); if(hint) hint.textContent=t.form_note;
+    }
+    // Active states on buttons
+    const btnIT=document.getElementById('btnIT'); const btnEN=document.getElementById('btnEN');
+    if(btnIT&&btnEN){ if(lang==='it'){ btnIT.style.color='#fff'; btnEN.style.color='#aab1bb'; } else { btnEN.style.color='#fff'; btnIT.style.color='#aab1bb'; } }
+  }
+
+  // Create floating toggle in nav if not present
+  function mountToggle(){
+    const container=document.querySelector('.nav-inner'); if(!container || document.getElementById('btnEN')) return;
+    const wrap=document.createElement('div');
+    wrap.className='lang';
+    wrap.style.cssText='margin-left:auto;display:flex;gap:6px;align-items:center;padding:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px';
+    const bIT=document.createElement('button'); bIT.id='btnIT'; bIT.type='button'; bIT.textContent='IT'; bIT.style.cssText='border:none;background:transparent;color:#fff;padding:6px 10px;border-radius:999px;cursor:pointer;font-weight:600';
+    const bEN=document.createElement('button'); bEN.id='btnEN'; bEN.type='button'; bEN.textContent='EN'; bEN.style.cssText='border:none;background:transparent;color:#aab1bb;padding:6px 10px;border-radius:999px;cursor:pointer;font-weight:600';
+    wrap.append(bIT,bEN); container.appendChild(wrap);
+    bIT.addEventListener('click',()=>setLang('it'));
+    bEN.addEventListener('click',()=>setLang('en'));
+  }
+
+  window.addEventListener('DOMContentLoaded',()=>{ mountToggle(); setLang('it'); });
+})();
